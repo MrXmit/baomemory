@@ -26,13 +26,13 @@ class MemoryCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-# class FinchUpdate(UpdateView):
-#   model = Finch
-#   fields = ['breed', 'description', 'age']
+class MemoryUpdate(UpdateView):
+  model = Memory
+  fields = ['title', 'details']
 
-# class FinchDelete(DeleteView):
-#   model = Finch
-#   success_url = '/finches/' 
+class MemoryDelete(DeleteView):
+  model = Memory
+  success_url = '/memories/' 
 
 def home(request):
   return render(request, 'home.html')

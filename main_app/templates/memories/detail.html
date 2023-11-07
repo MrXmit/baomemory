@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/finches/finch-detail.css' %}"
+/>
+<script defer src="{% static 'js/finch-detail.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<section class="cat-container">
+  <div class="cat-img">
+    <img 
+      src="{% static 'images/sk8r-boi-cat.svg' %}" 
+      alt="A skater boy cat"
+    >
+  </div>
+  <div class="cat-details">
+    <h1>{{ memory.name }}</h1>
+    <p>{{ memory.details }}</p>
+
+    <div class="cat-actions">
+      <a href="{% url 'memory-update' memory.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'memory-delete' memory.id %}" class="btn danger">Delete</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
