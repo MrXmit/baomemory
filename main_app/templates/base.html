@@ -1,0 +1,56 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} <link
+    rel="shortcut icon"
+    type="image/png"
+    href="https://images.app.goo.gl/vuj4pgx6bFJe3RzA7"
+  > {% endcomment %}
+  <link
+  rel="shortcut icon"
+  type="image/png"
+  href="https://cdn.discordapp.com/attachments/791636167304151071/1168869314259062886/Screenshot_2023-10-20_123700.png?ex=65535561&is=6540e061&hm=6080041cf20eb69af0ddc30f2754c72e868fe29ecff24b2298375c278d586bee&"
+>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <title>Finch Collector</title>
+
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <div class="header-logo-container">
+      <a href="/">
+        <img 
+          src="{% static 'images/header-logo.svg' %}"
+          alt="The Bao-Memories Collector Logo"
+        >
+      </a>
+    </div>
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'finch-index' %}">All Memories</a></li>
+          <li><a href="{% url 'finch-create' %}">Add a Memories</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li>
+          {% comment %} <li><a href="{% url 'signup' %}">Sign Up</a></li> {% endcomment %}
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
