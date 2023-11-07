@@ -36,14 +36,14 @@
     <nav>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'finch-index' %}">All Memories</a></li>
-          <li><a href="{% url 'finch-create' %}">Add a Memories</a></li>
+          <li><a href="{% url 'memory-index' %}">All Memories</a></li>
+          <li><a href="{% url 'memory-create' %}">Add a Memories</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'home' %}">Login</a></li>
-          {% comment %} <li><a href="{% url 'signup' %}">Sign Up</a></li> {% endcomment %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
         {% endif %}
       </ul>
     </nav>
