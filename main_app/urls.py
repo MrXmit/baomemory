@@ -2,14 +2,13 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    # path('', views.Home.as_view(), name='home'),
-    path('', views.home, name='home'),
+    path('', views.Home.as_view(), name='home'),
     path('about/', views.about, name='about'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
-    # path('finches/', views.finch_index, name='finch-index'),
-    # path('finches/<int:finch_id>/', views.finch_detail, name='finch-detail'),
-    # path('finches/create/', views.FinchCreate.as_view(), name='finch-create'),
+    path('memories/', views.memory_index, name='memory-index'),
+    path('memories/<int:finch_id>/', views.memory_detail, name='memorty-detail'),
+    path('memories/create/', views.MemoryCreate.as_view(), name='memory-create'),
     # path('finches/<int:pk>/update/', views.FinchUpdate.as_view(), name='finch-update'),
     # path('finches/<int:pk>/delete/', views.FinchDelete.as_view(), name='finch-delete'),
     # path('finches/<int:finch_id>/add-feeding/', views.add_feeding, name='add-feeding'),

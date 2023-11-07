@@ -8,8 +8,8 @@ from django.shortcuts import render
 # from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.decorators import login_required 
-# from django.views.generic.edit import CreateView, UpdateView, DeleteView
-# from .models import Finch
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import Memory
 # from .forms import FeedingForm
 from django.contrib.auth.views import LoginView
 
@@ -17,14 +17,14 @@ from django.contrib.auth.views import LoginView
 class Home(LoginView):
   template_name = 'home.html'
 
-# class FinchCreate(CreateView):
-#   model = Finch
-#   fields = ['name', 'breed', 'description', 'age']
-#   success_url = '/finches/'
+class MemoryCreate(CreateView):
+  model = Memory
+  fields = ['name', 'title', 'details']
+  success_url = '/memories/'
 
-#   def form_valid(self, form):
-#     form.instance.user = self.request.user
-#     return super().form_valid(form)
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 # class FinchUpdate(UpdateView):
 #   model = Finch
@@ -41,16 +41,14 @@ def about(request):
   return render(request, 'about.html')
 
 # @login_required
-# def finch_index(request):
-#   finches = Finch.objects.filter(user=request.user)
-#   return render(request, 'finches/index.html', { 'finches': finches })
+def memory_index(request):
+  memories = Memory.objects.filter(user=request.user)
+  return render(request, 'memories/index.html', { 'memories': memories })
 
 # @login_required
-# def finch_detail(request, finch_id):
-#   finch = Finch.objects.get(id=finch_id)
-#   toys_finch_doesnt_have = Toy.objects.exclude(id__in = finch.toys.all().values_list('id'))
-#   feeding_form = FeedingForm()
-#   return render(request, 'finches/detail.html', { 'finch': finch, 'feeding_form': feeding_form, 'toys': toys_finch_doesnt_have})
+def memory_detail(request, memory_id):
+  memory = Memory.objects.get(id=memory_id)
+  return render(request, 'memories/detail.html', { 'memory': memory})
 
 def signup(request):
   error_message = ''
