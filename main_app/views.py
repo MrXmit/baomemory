@@ -3,14 +3,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-# from django.shortcuts import render, redirect
-# from django.views.generic import ListView, DetailView
-# from django.contrib.auth import login
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Memory
-# from .forms import FeedingForm
 from django.contrib.auth.views import LoginView
 
 
@@ -19,7 +18,7 @@ class Home(LoginView):
 
 class MemoryCreate(CreateView):
   model = Memory
-  fields = ['name', 'title', 'details']
+  fields = ['title', 'details']
   success_url = '/memories/'
 
   def form_valid(self, form):
@@ -57,7 +56,7 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('finch-index')
+      return redirect('memory-index')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
