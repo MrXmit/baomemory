@@ -20,16 +20,18 @@ html {
 body {
   margin: 0;
   display: flex;
+  background-image: url("https://media.discordapp.net/attachments/847150391358390282/1171736476963319808/green-dirty-blackboard.jpg?ex=655dc3a1&is=654b4ea1&hm=d616c245519f4e08f0a84a194146ed84bd9e383f361a8d1ad99186af90d51b43&=&width=1699&height=1106");
   flex-direction: column;
+  background-size: cover;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
   --nav-bg: rgba(104, 197, 248, .7);
-  --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(36, 116, 248) solid 2px;
-  --text-color: rgb(17, 20, 17);
+  --nav-bg-ff: rgba(253, 253, 253, 0.9);
+  --borders: rgb(227, 248, 36) solid 2px;
+  --text-color: rgb(255, 255, 255);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
@@ -236,14 +238,6 @@ nav li {
     border-bottom: none;
   }
 
-  nav,
-  .header-logo-container {
-    margin: 0;
-    background: var(--nav-bg-ff);
-    border: var(--borders);
-    border-radius: 18px;
-  }
-
   nav {
     margin-left: auto;
   }
@@ -263,7 +257,7 @@ nav li {
 
     nav,
     .header-logo-container {
-      background: rgba(104, 197, 248, .6);
+      /* background: rgba(104, 197, 248, .6); */
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }

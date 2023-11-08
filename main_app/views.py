@@ -1,8 +1,3 @@
-from django.http import HttpResponse
-
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
@@ -39,12 +34,12 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
-# @login_required
+@login_required
 def memory_index(request):
   memories = Memory.objects.filter(user=request.user)
   return render(request, 'memories/index.html', { 'memories': memories })
 
-# @login_required
+@login_required
 def memory_detail(request, memory_id):
   memory = Memory.objects.get(id=memory_id)
   return render(request, 'memories/detail.html', { 'memory': memory})
