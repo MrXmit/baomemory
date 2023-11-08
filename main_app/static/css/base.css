@@ -161,6 +161,7 @@ nav li {
 
 .page-content {
   font-size: var(--font-reg);
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
