@@ -23,6 +23,7 @@ class MemoryCreate(CreateView):
 class MemoryUpdate(UpdateView):
   model = Memory
   fields = ['title', 'details']
+  success_url = '/memories/'
 
 class MemoryDelete(DeleteView):
   model = Memory

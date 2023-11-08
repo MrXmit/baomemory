@@ -98,7 +98,7 @@
 
 @media only screen and (min-width: 768px) {
   .memory-container {
-    padding: 35px 30px;
+    padding: 100px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
