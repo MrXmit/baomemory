@@ -19,7 +19,7 @@ Bao Memory is built with some cool and robust technologies - Django, PostgreSQL,
 - **Update the Memories:** Add more details or new perspectives to our shared stories.
 - **Delete (if you must):** We hope every memory stays, but you have the control.
 
-![index memories](https://cdn.discordapp.com/attachments/791636167304151071/1172149448592343070/image.png?ex=655f443e&is=654ccf3e&hm=123ec3230ce27d0ac079d0f35e462285f350649779083eb759548241b984acf5&)
+![index memories](https://cdn.discordapp.com/attachments/791636167304151071/1172168787655667884/image.png?ex=655f5640&is=654ce140&hm=be9b206f04e5495f7ead383c584e0c86c1effe48a8318a263b9fde2f4779af30&)
 ## Get Started 🚀
 
 1. **Grab the Code:** `git clone [https://github.com/MrXmit/baomemory.git]`
