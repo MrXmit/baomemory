@@ -31,11 +31,15 @@
     <h1>{{ memory.title }}</h1>
     <p>{{ memory.details }}</p>
 
-    <div class="memory-actions">
-      <a href="{% url 'memory-update' memory.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'memory-delete' memory.id %}" class="btn danger">Delete</a>
-    </div>
+    {% if user.id == memory.user.id %}
+      <div class="memory-actions">
+        <a href="{% url 'memory-update' memory.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'memory-delete' memory.id %}" class="btn danger">Delete</a>
+      </div>
+    {% endif %}
+    
   </div>
+
 </section>
 
 {% endblock %}
