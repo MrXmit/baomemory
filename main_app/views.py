@@ -36,7 +36,7 @@ def about(request):
 
 @login_required
 def memory_index(request):
-  memories = Memory.objects.filter(user=request.user)
+  memories = Memory.objects.filter()
   return render(request, 'memories/index.html', { 'memories': memories })
 
 @login_required
