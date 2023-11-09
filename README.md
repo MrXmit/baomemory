@@ -8,6 +8,8 @@ I'm Toni, and I'm super excited to introduce you to "Bao Memory." Think of it as
 
 [If you want to skip everything visit my repo!](https://github.com/MrXmit/baomemory.git)
 
+[click here to see the deployed app](https://baomemory.fly.dev/)
+
 ## Dive into Bao Memory 📖
 
 Bao Memory is built with some cool and robust technologies - Django, PostgreSQL, Python, Docker, and CSS. It's not just a memory bank; it's a testament to our growth as developers and friends.

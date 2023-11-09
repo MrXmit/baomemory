@@ -29,9 +29,9 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 # change this line
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.fly.dev']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baomemory.fly.dev']
 # add this line
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']
+CSRF_TRUSTED_ORIGINS = ['https://baomemory.fly.dev']
 
 
 # Application definition
